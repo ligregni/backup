@@ -1,3 +1,18 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+unsetopt autocd beep extendedglob nomatch notify
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/ligregni/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
 # tcsh style word moving
 my-backward-delete-word()
 {
@@ -32,9 +47,9 @@ zle -N my-forward-word
 bindkey '^[f' my-forward-word
 
 # Shell navigation
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
-bindkey '^R' history-incremental-search-backward
+# bindkey "^P" up-line-or-search
+# bindkey "^N" down-line-or-search
+# bindkey '^R' history-incremental-search-backward
 
 # Utility aliases
 mkcd() { dir=$1; mkdir -p $dir && cd $dir }
@@ -50,7 +65,6 @@ ttw() {
 }
 alias tte='ttw "============================================================="'
 
-
 panic()
 {
   echo "ERROR!!!"
@@ -58,4 +72,5 @@ panic()
 }
 
 export EDITOR=vim
+export PROMPT='%m:%3/%# '
 
